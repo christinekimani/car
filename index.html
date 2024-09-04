@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Insurance Quote Generator</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    
+    <header>
+        <h1>Car Insurance Quote Generator</h1>
+    </header>
+
+    <main id="landing-page">
+        <h2>Welcome to the Car Insurance Quote Generator</h2>
+        <h6>Buying life insurance is like fixing a leak in your roof. <br>
+        The longer you wait, the more expensive it gets.</h6>
+        <a href="#" class="button" onclick="showSection('login-page')">Login</a>
+        <a href="#" class="button" onclick="showSection('signup-page')">Sign Up</a>
+    </main>
+
+    
+    <main id="login-page" class="hidden">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); showSection('dashboard-page');">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required>
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#" onclick="showSection('landing-page')">Back to Home</a>
+    </main>
+
+
+    <main id="signup-page" class="hidden">
+        <h2>Sign Up</h2>
+        <form onsubmit="event.preventDefault(); showSection('dashboard-page');">
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="email" required>
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="#" onclick="showSection('landing-page')">Back to Home</a>
+    </main>
+
+
+    <main id="add-car-page" class="hidden">
+        <h2>Add Car Details</h2>
+        <form onsubmit="event.preventDefault(); showSection('quote-page');">
+            <label for="make">Car Make:</label>
+            <input type="text" id="make" name="make" required>
+            <label for="model">Car Model:</label>
+            <input type="text" id="model" name="model" required>
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" required>
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="new">New</option>
+                <option value="used">Used</option>
+            </select>
+            <button type="submit">Generate Quote</button>
+        </form>
+        <a href="#" onclick="showSection('dashboard-page')">Back to Dashboard</a>
+    </main>
+
+    
+    <main id="quote-page" class="hidden">
+        <h2>Your Car Insurance Quote</h2>
+        <p><strong>Car Make:</strong> <span id="quote-make"></span></p>
+        <p><strong>Car Model:</strong> <span id="quote-model"></span></p>
+        <p><strong>Year:</strong> <span id="quote-year"></span></p>
+        <p><strong>Condition:</strong> <span id="quote-condition"></span></p>
+        <p><strong>Quote:</strong> $<span id="quote-amount"></span></p>
+        <a href="#" class="button" onclick="saveQuote()">Save Quote</a>
+        <a href="#" onclick="showSection('dashboard-page')">Back to Dashboard</a>
+    </main>
+
+    
+    <main id="dashboard-page" class="hidden">
+        <h2>Your Saved Quotes</h2>
+        <table>
+            <tr>
+                <th>Car</th>
+                <th>Year</th>
+                <th>Condition</th>
+                <th>Quote</th>
+                <th>Actions</th>
+            </tr>
+            
+        </table>
+        <a href="#" class="button" onclick="showSection('add-car-page')">Add New Quote</a>
+        <a href="#" onclick="showSection('landing-page')">Logout</a>
+    </main>
+            <div>
+  
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="carousel-item">
+                    <img src="caaaar.jpeg" alt="Car 1">
+                    <p>"It's not just a car, it's someone's dream."</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="caaaar.jpeg" alt="Car 2">
+                    <p>"Driving is a spectacular form of amnesia."</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="caaaar.jpeg" alt="Car 3">
+                    <p>"A car is not just a machine, it's a passion."</p>
+                </div>
+            </div>
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>
